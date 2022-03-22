@@ -1,0 +1,14 @@
+<h5>Login page</h5>
+<form #userform="ngForm">
+<input #idField="ngModel" type="text" name="id" [(ngModel)]="user.id" placeholder="id" required>
+<span *ngIf="idField.invalid && idField.touched">Id is MUST</span>
+<br><br>
+<input #nameField="ngModel" type="text" name="email" [(ngModel)]="user.email" placeholder="email" required>
+<span *ngIf="nameField.invalid && nameField.touched">email is MUST</span>
+<br><br>
+<input #passwordField="ngModel"type="password" name="password" [(ngModel)]="user.password" placeholder="password" required>
+<span *ngIf="passwordField.invalid && passwordField.touched">password is MUST</span>
+<br><br>
+<input type="button" [disabled]="userform.invalid" value="Login" (click)="performLogin()">
+</form>
+
